@@ -1,5 +1,6 @@
-// import mongoose
+// // import mongoose
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dataFormat');
 
 // Thought model contains:
 const ThoughtSchema = new Schema({
@@ -7,16 +8,21 @@ const ThoughtSchema = new Schema({
     thoughtText: {
         type: String,
     },
+
 // createdAt: date, set default value to current timestamp, use getter method to format the timestamp on query
     createdAt: {
         type: Date,
-        default: Date.now
-        // getter method?
+        default: Date.now,
+        get: (createdAtVal) => dateFormat(createdAtVal)
     },
+
 // username: string, required
-    username: {},
+    username: {
+        type: String
+    },
+    
 // reactions: [array of nested documents created with the reactionSchema]
-    reactions: []
+//     reactions: []
 });
 
 const Thought = model('Thought', ThoughtSchema);

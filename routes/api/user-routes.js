@@ -17,7 +17,7 @@ router
 
 // Set up GET one, PUT, and DELETE at /api/users/:id
 router
-    .router('/:id')
+    .route('/:id')
     .get(getUserById)
     .put(updateUser)
     .delete(deleteUser)
