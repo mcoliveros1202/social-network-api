@@ -1,15 +1,24 @@
 // import mongoose
 const { Schema, model } = require('mongoose');
 
+// const friendSchema = new Schema({
+
+// })
 // User model contains:
 const UserSchema = new Schema({
     // username: string, unique, required, trimmed
     username: {
         type: String,
+        unique: true,
+        required: true,
+        trim: true
     },
     // email: string, unique, match valid address
     email: {
         type: String,
+        required: true,
+        unique: true,
+        // validation
     },
     // thoughts: array of _id values referencing Thought model
     thoughts: [
@@ -19,7 +28,12 @@ const UserSchema = new Schema({
         }
     ],
     // friends: array of _id values referencing the User model (self reference)
-    friends: []
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
 },
     {
         toJSON: {
