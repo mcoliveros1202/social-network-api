@@ -18,7 +18,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        // validation
+        match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'Please provide a valid email address.']
     },
     // thoughts: array of _id values referencing Thought model
     thoughts: [
