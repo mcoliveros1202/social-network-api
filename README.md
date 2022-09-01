@@ -8,6 +8,7 @@
   - [Contributing](#how-to-contribute)
   - [Tests](#testing)
   - [Questions](#questions)
+  - [Walkthrough](#walkthrough)
 
   ## Description
     This application is a social networking platform that allows users to post their thoughts, react to thoughts already posted, and add friends to their friends-list.
@@ -32,3 +33,8 @@
     mcoliveros1202@gmail.com
 
     For more of my work, visit github.com/mcoliveros1202
+    
+    
+## Walkthrough
+https://user-images.githubusercontent.com/104112466/188030570-aa75f831-828d-4f68-a017-dc760ee01436.mp4
+
